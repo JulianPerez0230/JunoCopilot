@@ -1,0 +1,34 @@
+{
+  tools: {
+    allow: [
+      "read",
+      "write",
+      "edit",
+      "image",
+      "session_status",
+    ],
+    deny: [
+      "exec",
+      "process",
+      "apply_patch",
+      "browser",
+      "sessions_spawn",
+      "sessions_send",
+      "sessions_yield",
+      "subagents",
+    ],
+    fs: {
+      workspaceOnly: true,
+    },
+    exec: {
+      mode: "deny",
+      applyPatch: {
+        enabled: false,
+        workspaceOnly: true,
+      },
+    },
+    elevated: {
+      enabled: false,
+    },
+  },
+}

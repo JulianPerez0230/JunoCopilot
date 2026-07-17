@@ -46,20 +46,20 @@ Conversar con Juno y recuperar un proyecto desde una sesión nueva.
 
 - [x] Verificar versión instalada.
 - [x] Resolver disponibilidad del comando en PowerShell.
-- [ ] Configurar ChatGPT/Codex OAuth.
-- [ ] Cambiar el workspace activo a `JunoWorkspace`.
-- [ ] Mantener Gateway local y enlazado a loopback.
-- [ ] Bloquear ejecución de comandos para el MVP.
-- [ ] Revisar la autenticación de la interfaz local.
+- [x] Configurar ChatGPT/Codex OAuth.
+- [x] Cambiar el workspace activo a `JunoWorkspace`.
+- [x] Mantener Gateway local y enlazado a loopback.
+- [x] Bloquear ejecución de comandos para el MVP.
+- [x] Revisar la autenticación de la interfaz local.
 
 ### Identidad y modos
 
-- [ ] Crear identidad e instrucciones iniciales de Juno.
-- [ ] Implementar `Auto` como selección predeterminada.
-- [ ] Definir Tutor, Investigación y Trabajo.
-- [ ] Mostrar etiqueta breve de modo y modelo.
-- [ ] Permitir cambio manual y regreso a `Auto`.
-- [ ] Comprobar que cambiar de modo no cambia el proyecto activo.
+- [x] Crear identidad e instrucciones iniciales de Juno.
+- [x] Implementar `Auto` como selección predeterminada.
+- [x] Definir Tutor, Investigación y Trabajo.
+- [x] Mostrar etiqueta breve de modo y modelo.
+- [x] Permitir cambio manual y regreso a `Auto`.
+- [x] Comprobar que cambiar de modo no cambia el proyecto activo.
 
 ### Proyectos y memoria
 
@@ -69,7 +69,7 @@ Conversar con Juno y recuperar un proyecto desde una sesión nueva.
 - [x] Crear estructura de sesiones, inbox, adjuntos y archivo.
 - [x] Crear proyecto interno `junocopilot`.
 - [ ] Crear proyecto externo `turbines` con datos mínimos ficticios o aprobados.
-- [ ] Implementar selección y apertura de proyecto.
+- [x] Implementar selección y apertura de proyecto.
 - [ ] Preparar la interfaz del índice SQLite.
 - [ ] Implementar SQLite solo si no bloquea el recorrido básico.
 
