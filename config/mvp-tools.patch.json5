@@ -21,7 +21,6 @@
       workspaceOnly: true,
     },
     exec: {
-      mode: "deny",
       applyPatch: {
         enabled: false,
         workspaceOnly: true,
