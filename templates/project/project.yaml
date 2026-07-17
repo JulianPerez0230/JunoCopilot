@@ -1,0 +1,9 @@
+schema_version: 1
+id: "{{project_id}}"
+name: "{{project_name}}"
+created_at: "{{created_at}}"
+status: "setup"
+privacy: "private"
+allowed_providers: []
+approved_external_paths: []
+

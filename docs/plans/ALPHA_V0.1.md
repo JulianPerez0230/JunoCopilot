@@ -36,16 +36,16 @@ Conversar con Juno y recuperar un proyecto desde una sesión nueva.
 
 ### Preparación
 
-- [ ] Inicializar Git.
-- [ ] Agregar licencia de código abierto.
-- [ ] Crear `.gitignore`.
-- [ ] Crear `JunoWorkspace` privado.
-- [ ] Documentar separación entre código, datos y estado de OpenClaw.
+- [x] Inicializar Git.
+- [x] Agregar licencia de código abierto.
+- [x] Crear `.gitignore`.
+- [x] Crear `JunoWorkspace` privado.
+- [x] Documentar separación entre código, datos y estado de OpenClaw.
 
 ### OpenClaw
 
-- [ ] Verificar versión instalada.
-- [ ] Resolver disponibilidad del comando en PowerShell.
+- [x] Verificar versión instalada.
+- [x] Resolver disponibilidad del comando en PowerShell.
 - [ ] Configurar ChatGPT/Codex OAuth.
 - [ ] Cambiar el workspace activo a `JunoWorkspace`.
 - [ ] Mantener Gateway local y enlazado a loopback.
@@ -63,11 +63,11 @@ Conversar con Juno y recuperar un proyecto desde una sesión nueva.
 
 ### Proyectos y memoria
 
-- [ ] Crear plantilla de proyecto.
-- [ ] Crear archivos canónicos Markdown.
-- [ ] Definir `project.yaml`.
-- [ ] Crear estructura de sesiones, inbox, adjuntos y archivo.
-- [ ] Crear proyecto interno `junocopilot`.
+- [x] Crear plantilla de proyecto.
+- [x] Crear archivos canónicos Markdown.
+- [x] Definir `project.yaml`.
+- [x] Crear estructura de sesiones, inbox, adjuntos y archivo.
+- [x] Crear proyecto interno `junocopilot`.
 - [ ] Crear proyecto externo `turbines` con datos mínimos ficticios o aprobados.
 - [ ] Implementar selección y apertura de proyecto.
 - [ ] Preparar la interfaz del índice SQLite.
@@ -260,4 +260,3 @@ Al finalizar cada semana se debe responder:
 3. ¿Qué función generó trabajo en vez de ahorrarlo?
 4. ¿Qué riesgo o permiso nuevo apareció?
 5. ¿Qué se elimina o pospone para proteger la siguiente semana?
-
