@@ -1,0 +1,57 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*secret*
+*credentials*
+auth-profiles.json
+openclaw.json
+exec-approvals.json
+
+# Private Juno/OpenClaw runtime data
+.openclaw/
+JunoWorkspace/
+runtime/
+data/
+state/
+cache/
+logs/
+attachments/
+*.db
+*.db-shm
+*.db-wal
+*.db-journal
+
+# Node.js
+node_modules/
+dist/
+coverage/
+.npm/
+.pnpm-store/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Editors and operating systems
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.log
+
