@@ -47,13 +47,13 @@ El MVP no incluye:
 Juno se divide en tres espacios independientes:
 
 ```text
-C:\Users\JULIAN\JunoCopilot
+%USERPROFILE%\JunoCopilot
     Producto público: código, plantillas, documentación y pruebas.
 
-C:\Users\JULIAN\JunoWorkspace
+%USERPROFILE%\JunoWorkspace
     Datos privados: proyectos, memoria, sesiones, adjuntos e índices.
 
-C:\Users\JULIAN\.openclaw
+%USERPROFILE%\.openclaw
     Estado de OpenClaw: configuración, credenciales, sesiones y logs internos.
 ```
 
@@ -259,10 +259,29 @@ Selecciona una única ruta antes de enviar contexto:
 |---|---|---:|---|
 | Local/determinista | Fechas, archivos, validaciones y reglas | 0 | Sí |
 | ChatGPT/Codex OAuth | Razonamiento y conversación compleja | 0 mientras haya cuota | Sí |
-| API gratuita aprobada | Clasificación y extracción sencilla | 0 con límites | Posterior |
+| API gratuita aprobada | Clasificación sencilla mediante `llm-task` y contexto acotado | 0 con límites | Sí |
 | API paga | Respaldo o capacidades especiales | Variable | Futuro |
 
 El router no debe consultar varios modelos con el mismo contexto salvo solicitud explícita. Cada respuesta mostrará una etiqueta breve como `Local` o `Codex`.
+
+La primera ruta gratuita validada utiliza Groq con
+`llm-task` y `groq/llama-3.3-70b-versatile`. Esta ruta recibe únicamente la
+captura que debe clasificar, usa `thinking: off` y devuelve un objeto validado
+por esquema. No recibe la conversación completa ni la memoria del proyecto. La
+resolución de fechas, rutas, permisos y escrituras continúa siendo local y
+determinista.
+
+Para capturas nuevas en lenguaje natural que mezclen gastos, tareas, proyectos
+o fechas relativas, esta ruta es obligatoria durante la validación del router.
+Solo puede omitirse cuando la entrada ya esté estructurada o una regla mecánica
+explícita baste sin interpretación lingüística. El resultado conserva
+proveedor y modelo junto con la captura pendiente para permitir auditoría
+posterior sin repetir la clasificación.
+
+El resultado del clasificador se considera entrada no confiable. Un fallo no
+autoriza a inventar una clasificación, cambiar silenciosamente de proveedor ni
+ejecutar una acción. Las tareas técnicas, Tutor, Research y las decisiones
+importantes permanecen en el modelo principal aprobado.
 
 ## 6. Estructura de JunoWorkspace
 
@@ -467,6 +486,13 @@ Nunca deben enviarse:
 
 El registro de una operación externa conserva proveedor, modelo, fecha, proyecto, propósito y referencia del contenido utilizado. No debe duplicar el prompt completo salvo que el usuario active explícitamente un modo de depuración.
 
+Durante Alpha v0.1, este registro se conserva de forma legible en
+`logs/model-usage/YYYY-MM.md`. Cada intento ocupa una entrada independiente;
+los reintentos comparten un `operation_id`. Se registran también los fallos de
+validación, límites de cuota y timeouts para medir confiabilidad y consumo real.
+El registro no contiene prompts completos, credenciales ni el texto íntegro de
+la captura: referencia el elemento correspondiente del inbox o del proyecto.
+
 ## 10. Permisos del MVP
 
 | Acción | Política |
@@ -475,6 +501,9 @@ El registro de una operación externa conserva proveedor, modelo, fecha, proyect
 | Agregar capturas a `inbox/` | Permitido automáticamente |
 | Preparar cierres provisionales | Permitido |
 | Actualizar archivos canónicos | Requiere aprobación |
+| Buscar, abrir y leer páginas web públicas | Permitido |
+| Iniciar sesión, enviar formularios, publicar o comprar | Requiere aprobación explícita |
+| Descargar archivos desde la web | Requiere aprobación explícita y una ruta estable autorizada |
 | Leer una ruta externa | No disponible en el MVP |
 | Escribir fuera de JunoWorkspace | Bloqueado |
 | Ejecutar comandos | Bloqueado |
@@ -485,7 +514,27 @@ El perfil actual `coding` de OpenClaw deberá restringirse antes de utilizar Jun
 
 Las capacidades futuras —MATLAB, Python, monitoreo del sistema, rutas externas o borrado solicitado— se agregarán mediante herramientas explícitas, allowlists y confirmaciones. No amplían los permisos del MVP.
 
-## 11. Almacenamiento
+## 11. Integraciones de Alpha v0.2
+
+Google Calendar extiende el MVP mediante una integración OAuth separada. Sus
+credenciales y tokens permanecen en `.openclaw`; nunca forman parte del
+repositorio público ni de JunoWorkspace.
+
+Calendar conserva compromisos con fecha y hora. JunoWorkspace conserva el
+razonamiento de planificación, prioridades, márgenes y pendientes. Juno compara
+ambas fuentes, pero no considera esa comparación una sincronización.
+
+La integración validada permite lectura y creación confirmada. Actualización y
+eliminación permanecen fuera de la lista de herramientas. Consulte
+[`integrations/GOOGLE_CALENDAR.md`](integrations/GOOGLE_CALENDAR.md) para el
+flujo operativo y los límites.
+
+El inventario global `projects/index.md` es un índice reconstruible que permite
+localizar proyectos activos durante la planificación. No duplica el estado
+técnico: después de seleccionar un proyecto, Juno debe leer sus archivos
+canónicos.
+
+## 12. Almacenamiento
 
 Se establece un presupuesto inicial orientativo de 10 GB para JunoWorkspace:
 
@@ -500,12 +549,12 @@ Política de retención futura:
 - cachés y miniaturas: regenerables;
 - CAD y simulaciones grandes: referencias a ubicaciones aprobadas, sin duplicación.
 
-## 12. Integración con OpenClaw
+## 13. Integración con OpenClaw
 
 La configuración prevista es:
 
 ```text
-agents.defaults.workspace = C:\Users\JULIAN\JunoWorkspace
+agents.defaults.workspace = %USERPROFILE%\JunoWorkspace
 gateway.mode = local
 gateway.bind = loopback
 modelo inicial = OpenAI mediante ChatGPT/Codex OAuth
@@ -522,7 +571,8 @@ Antes de activar datos reales se deberá:
 4. bloquear ejecución de comandos;
 5. revisar `allowInsecureAuth` de la interfaz local;
 6. confirmar que el Gateway solo escuche en loopback;
-7. ejecutar una prueba con datos ficticios.
+7. comprobar que las acciones web externas requieran aprobación;
+8. ejecutar una prueba con datos ficticios.
 
 ## 13. Estrategia de validación
 

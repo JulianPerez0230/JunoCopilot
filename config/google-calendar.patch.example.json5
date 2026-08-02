@@ -1,0 +1,49 @@
+{
+  // Example only. Keep real credential and token files outside the repository.
+  plugins: {
+    allow: [
+      "openai",
+      "google",
+      "codex",
+      "groq",
+      "llm-task",
+      "memory-core",
+      "telegram",
+      "openclaw-google-workspace",
+    ],
+    entries: {
+      "openclaw-google-workspace": {
+        enabled: true,
+        config: {
+          credentialsPath: "C:\\Users\\YOUR_USER\\.openclaw\\secrets\\google-oauth.json",
+          tokenPath: "C:\\Users\\YOUR_USER\\.openclaw\\secrets\\google-calendar-tokens.json",
+          services: {
+            gmail: { enabled: false, readOnly: true },
+            calendar: {
+              enabled: true,
+              readOnly: false,
+              defaultCalendarId: "primary",
+              defaultTimeZone: "America/Argentina/Buenos_Aires",
+              upcomingWindowDays: 7,
+            },
+            drive: { enabled: false, readOnly: true },
+            contacts: { enabled: false },
+            tasks: { enabled: false },
+            sheets: { enabled: false, readOnly: true },
+          },
+        },
+      },
+    },
+  },
+  tools: {
+    allow: [
+      "google_workspace_begin_auth",
+      "google_workspace_complete_auth",
+      "google_workspace_auth_status",
+      "google_calendar_list_events",
+      "google_calendar_find_next_meeting",
+      "google_calendar_create_event",
+    ],
+  },
+}
+

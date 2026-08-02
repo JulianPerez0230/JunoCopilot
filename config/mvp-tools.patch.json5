@@ -1,4 +1,15 @@
 {
+  models: {
+    providers: {
+      openai: {
+        // Keep ChatGPT/Codex OAuth, but use OpenClaw's embedded runtime so the
+        // MVP can expose read/write/edit while command execution stays denied.
+        agentRuntime: {
+          id: "openclaw",
+        },
+      },
+    },
+  },
   tools: {
     allow: [
       "read",
@@ -6,12 +17,13 @@
       "edit",
       "image",
       "session_status",
+      "browser",
+      "llm-task",
     ],
     deny: [
       "exec",
       "process",
       "apply_patch",
-      "browser",
       "sessions_spawn",
       "sessions_send",
       "sessions_yield",

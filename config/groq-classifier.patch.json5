@@ -1,0 +1,47 @@
+{
+  // Authentication is intentionally omitted. Create the `groq:manual`
+  // API-key profile with OpenClaw instead of storing a secret in this file.
+  models: {
+    mode: "merge",
+    providers: {
+      groq: {
+        baseUrl: "https://api.groq.com/openai/v1",
+        api: "openai-completions",
+        models: [
+          {
+            id: "llama-3.3-70b-versatile",
+            name: "Llama 3.3 70B Versatile",
+            reasoning: false,
+            input: ["text"],
+            contextWindow: 131072,
+            maxTokens: 8192,
+          },
+        ],
+      },
+    },
+  },
+  agents: {
+    defaults: {
+      models: {
+        "groq/llama-3.3-70b-versatile": {
+          alias: "groq-classifier",
+        },
+      },
+    },
+  },
+  plugins: {
+    entries: {
+      "llm-task": {
+        enabled: true,
+        config: {
+          defaultProvider: "groq",
+          defaultModel: "groq/llama-3.3-70b-versatile",
+          defaultAuthProfileId: "groq:manual",
+          allowedModels: ["groq/llama-3.3-70b-versatile"],
+          maxTokens: 300,
+          timeoutMs: 30000,
+        },
+      },
+    },
+  },
+}

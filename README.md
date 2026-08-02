@@ -66,15 +66,25 @@ external technical validation
 
 ## Project status
 
-**Phase 0 — Definition**
+**Alpha v0.1 — integrated validation**
 
-The vision, initial requirements and MVP architecture have been defined. The four-week Alpha v0.1 implementation plan is ready to begin.
+The core supervised workflows are operational and are being validated with
+JunoCopilot itself, engineering coursework and the Turbines project. Project
+recovery across conversations, canonical Markdown memory, Tutor, Research,
+Work, Telegram capture, planning, restricted tools and public-web research have
+all been exercised. Alpha v0.2 adds validated Google Calendar reading,
+reconciliation and confirmed event creation. Native PDF analysis remains an
+upstream limitation; current work focuses on cross-project inventory, classes
+and operational resilience.
 
 - [Vision](docs/VISION.md)
 - [Requirements](docs/REQUIREMENTS.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Product roadmap](docs/ROADMAP.md)
 - [Alpha v0.1 implementation plan](docs/plans/ALPHA_V0.1.md)
+- [Alpha v0.2 implementation plan](docs/plans/ALPHA_V0.2.md)
+- [Google Calendar integration](docs/integrations/GOOGLE_CALENDAR.md)
+- [Known limitations](docs/KNOWN_LIMITATIONS.md)
 
 ## Portfolio objective
 

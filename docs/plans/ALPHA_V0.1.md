@@ -47,6 +47,7 @@ Conversar con Juno y recuperar un proyecto desde una sesión nueva.
 - [x] Verificar versión instalada.
 - [x] Resolver disponibilidad del comando en PowerShell.
 - [x] Configurar ChatGPT/Codex OAuth.
+- [x] Usar el runtime interno de OpenClaw para conservar las herramientas de archivos con la política restringida.
 - [x] Cambiar el workspace activo a `JunoWorkspace`.
 - [x] Mantener Gateway local y enlazado a loopback.
 - [x] Bloquear ejecución de comandos para el MVP.
@@ -68,10 +69,10 @@ Conversar con Juno y recuperar un proyecto desde una sesión nueva.
 - [x] Definir `project.yaml`.
 - [x] Crear estructura de sesiones, inbox, adjuntos y archivo.
 - [x] Crear proyecto interno `junocopilot`.
-- [ ] Crear proyecto externo `turbines` con datos mínimos ficticios o aprobados.
+- [x] Crear proyecto externo `turbines` con datos mínimos ficticios o aprobados.
 - [x] Implementar selección y apertura de proyecto.
-- [ ] Preparar la interfaz del índice SQLite.
-- [ ] Implementar SQLite solo si no bloquea el recorrido básico.
+- [ ] Preparar la interfaz del índice SQLite (pospuesto; Markdown cubre el recorrido básico).
+- [ ] Implementar SQLite solo si una necesidad medida justifica agregarlo.
 
 ### Criterio semanal
 
@@ -85,39 +86,39 @@ Conservar el trabajo diario y recibir capturas desde el celular.
 
 ### Sesiones
 
-- [ ] Iniciar una sesión con objetivo concreto.
-- [ ] Mantener un único proyecto activo por sesión.
-- [ ] Detectar ideas, decisiones, fundamentos y pendientes.
-- [ ] Acumular elementos sin interrumpir.
-- [ ] Preparar cierre breve.
-- [ ] Permitir corrección y aprobación.
-- [ ] Actualizar memoria canónica después de aprobar.
-- [ ] Recuperar el estado desde una sesión posterior.
+- [x] Iniciar una sesión con objetivo concreto.
+- [x] Mantener un único proyecto activo por sesión.
+- [x] Detectar ideas, decisiones, fundamentos y pendientes.
+- [x] Acumular elementos sin interrumpir.
+- [x] Preparar cierre breve.
+- [x] Permitir corrección y aprobación.
+- [x] Actualizar memoria canónica después de aprobar.
+- [x] Recuperar el estado desde una sesión posterior.
 
 ### Captura universal
 
-- [ ] Crear inbox general.
-- [ ] Clasificar ideas, tareas, fechas, gastos y contenido académico.
-- [ ] Convertir fechas relativas en fechas absolutas.
-- [ ] Pedir confirmación solo para elementos importantes o ambiguos.
-- [ ] Mantener material original revisable.
+- [x] Crear inbox general.
+- [x] Clasificar ideas, tareas, fechas, gastos y contenido académico.
+- [x] Convertir fechas relativas en fechas absolutas.
+- [x] Pedir confirmación solo para elementos importantes o ambiguos.
+- [x] Mantener material original revisable.
 
 ### Telegram
 
-- [ ] Crear y proteger el bot.
-- [ ] Configurar Telegram únicamente para captura.
-- [ ] Limitar remitentes autorizados.
-- [ ] Probar mensajes pendientes con la computadora apagada.
-- [ ] Procesar la cola al iniciar el Gateway dentro de 24 horas.
-- [ ] Impedir ejecución de acciones desde Telegram.
+- [x] Crear y proteger el bot.
+- [x] Configurar Telegram únicamente para captura.
+- [x] Limitar remitentes autorizados.
+- [x] Probar mensajes pendientes con la computadora apagada.
+- [x] Procesar la cola al iniciar el Gateway dentro de 24 horas.
+- [x] Impedir ejecución de acciones desde Telegram.
 
 ### Organización alfa
 
-- [ ] Crear propuesta de planificación semanal manual.
-- [ ] Usar horarios con márgenes y transiciones.
-- [ ] Proteger comidas, descanso y estiramiento mínimo.
-- [ ] Crear revisión diaria breve.
-- [ ] Mostrar consecuencias antes de replanificar.
+- [x] Crear propuesta de planificación semanal manual.
+- [x] Usar horarios con márgenes y transiciones.
+- [x] Proteger comidas, descanso y estiramiento mínimo.
+- [x] Crear revisión diaria breve.
+- [x] Mostrar consecuencias antes de replanificar.
 
 ### Criterio semanal
 
@@ -131,34 +132,36 @@ Validar los dos comportamientos educativos principales sin construir todavía si
 
 ### Tutor alfa
 
-- [ ] Crear una materia y sus temas.
-- [ ] Incorporar un PDF o apunte.
-- [ ] Permitir exploración inicial por el usuario.
-- [ ] Identificar temas centrales.
-- [ ] Registrar énfasis del profesor manualmente.
-- [ ] Proponer diagnóstico breve opcional.
-- [ ] Implementar preguntas y pistas progresivas.
-- [ ] Registrar explicación propia, ejercicios, autonomía y retención.
-- [ ] Crear resumen y banco inicial de preguntas.
-- [ ] Evitar repasos durante concentración o urgencias.
+- [x] Crear una materia y sus temas.
+- [x] Incorporar un PDF o apunte.
+- [x] Permitir exploración inicial por el usuario.
+- [x] Identificar temas centrales.
+- [x] Registrar énfasis del profesor manualmente.
+- [x] Proponer diagnóstico breve opcional.
+- [x] Implementar preguntas y pistas progresivas.
+- [x] Registrar explicación propia, ejercicio aplicado y autonomía.
+- [x] Comprobar y registrar retención en una sesión posterior.
+- [x] Crear resumen y banco inicial de preguntas.
+- [ ] Evitar repasos durante concentración o urgencias (pospuesto; la cadencia
+  adaptativa madura queda fuera del Alpha v0.1).
 
 ### Investigación alfa
 
-- [ ] Incorporar un paper.
-- [ ] Extraer problema, objetivo y fundamentos.
-- [ ] Extraer metodología, resultados y conclusiones.
-- [ ] Registrar limitaciones.
-- [ ] Guardar citas con página verificable.
-- [ ] Registrar utilidad para el proyecto.
-- [ ] Proponer una relación lateral con justificación.
-- [ ] Diferenciar hechos, inferencias y opiniones.
+- [x] Incorporar un paper.
+- [x] Extraer problema, objetivo y fundamentos.
+- [x] Extraer metodología, resultados y conclusiones.
+- [x] Registrar limitaciones.
+- [x] Guardar citas con página verificable.
+- [x] Registrar utilidad para el proyecto.
+- [x] Proponer una relación lateral con justificación.
+- [x] Diferenciar hechos, inferencias y opiniones.
 
 ### Integración de modos
 
-- [ ] Cambiar automáticamente por turno o tarea.
-- [ ] Mostrar modo actual.
-- [ ] Permitir anulación manual.
-- [ ] Mantener proyecto y memoria durante el cambio.
+- [x] Cambiar automáticamente por turno o tarea.
+- [x] Mostrar modo actual.
+- [x] Permitir anulación manual.
+- [x] Mantener proyecto y memoria durante el cambio.
 
 ### Criterios semanales
 
@@ -174,30 +177,51 @@ Convertir los prototipos en una alfa integrada, explicable y demostrable.
 
 ### Validación interna
 
-- [ ] Usar Juno para documentar su propio desarrollo.
-- [ ] Ejecutar varias sesiones desde chats diferentes.
-- [ ] Reemplazar una decisión sin perder su historial.
-- [ ] Recuperar un cierre provisional o incompleto.
+- [x] Usar Juno para documentar su propio desarrollo.
+- [x] Ejecutar varias sesiones desde chats diferentes.
+- [x] Reemplazar una decisión sin perder su historial.
+- [x] Recuperar un cierre provisional o incompleto.
 
 ### Validación con turbinas
 
-- [ ] Abrir el proyecto desde una conversación nueva.
-- [ ] Registrar fundamento, idea y pendiente.
-- [ ] Cambiar entre Trabajo, Tutor e Investigación.
-- [ ] Analizar un paper relacionado.
-- [ ] Cerrar y recuperar la sesión.
-- [ ] Verificar que no se mezcle información de JunoCopilot.
+- [x] Abrir el proyecto desde una conversación nueva.
+- [x] Registrar fundamento, idea y pendiente.
+- [x] Cambiar entre Trabajo, Tutor e Investigación.
+- [x] Analizar un paper relacionado.
+- [x] Cerrar y recuperar la sesión.
+- [x] Verificar que no se mezcle información de JunoCopilot.
 
 ### Seguridad y robustez
 
-- [ ] Revisar permisos efectivos de OpenClaw.
-- [ ] Verificar que los comandos permanezcan bloqueados.
-- [ ] Comprobar que JunoCopilot no se modifica durante el uso normal.
-- [ ] Verificar políticas de proveedor y etiquetas.
-- [ ] Revisar el registro de envíos externos.
-- [ ] Probar entradas ambiguas y archivos faltantes.
-- [ ] Medir almacenamiento.
+- [x] Revisar permisos efectivos de OpenClaw.
+- [x] Verificar que los comandos permanezcan bloqueados.
+- [x] Comprobar que JunoCopilot no se modifica durante el uso normal.
+- [x] Verificar políticas de proveedor y etiquetas.
+- [x] Validar navegación y lectura de fuentes web públicas.
+- [x] Verificar aprobación previa para descargas y otras acciones web externas.
+- [x] Revisar y probar el registro de envíos externos sin guardar prompts,
+  credenciales ni contenido completo.
+- [x] Probar entradas ambiguas y archivos faltantes.
+- [x] Medir almacenamiento: línea base de `JunoWorkspace` al 2026-07-24,
+  1,364 GiB en 378 archivos.
 - [ ] Probar reconstrucción del índice SQLite, si está implementado.
+
+### Resiliencia y costos
+
+- [x] Probar Juno sin el proveedor experimental de Gemini.
+- [x] Documentar qué ocurre cuando el OAuth de OpenAI no está disponible.
+- [x] Diseñar y probar una captura en bruto que conserve mensajes cuando el
+  clasificador no esté disponible, sin ejecutar acciones ni perder su fuente y
+  fecha.
+- [x] Definir y probar una ruta gratuita de bajo riesgo: clasificación acotada
+  mediante `llm-task`, Groq y `llama-3.3-70b-versatile`, sin enviar memoria ni
+  contexto completo.
+- [ ] Establecer un presupuesto mensual máximo, sin recarga automática
+  (pospuesto hasta incorporar una API paga).
+- [ ] Medir qué tareas requieren Sol y cuáles pueden resolverse con modelos más
+  económicos antes de asignar rutas permanentes.
+- [x] Verificar que proyectos, memoria e inbox continúen accesibles aunque se
+  cambie o elimine un proveedor (prueba sin Gemini completada).
 
 ### Portafolio
 
@@ -206,7 +230,7 @@ Convertir los prototipos en una alfa integrada, explicable y demostrable.
 - [ ] Documentar instalación y uso.
 - [ ] Preparar datos de ejemplo no sensibles.
 - [ ] Crear una demostración reproducible.
-- [ ] Registrar limitaciones conocidas.
+- [x] Registrar limitaciones conocidas.
 - [ ] Crear backlog de Alpha v0.2.
 
 ### Criterio final

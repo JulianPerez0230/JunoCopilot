@@ -294,7 +294,7 @@ Las tareas que puedan resolverse mediante reglas locales no deben consumir un mo
 **RF-102 — Suscripción como modelo complejo — MVP**  
 Inicialmente, las tareas complejas deben utilizar ChatGPT/Codex mediante OAuth de la suscripción, sin consumo de API paga.
 
-**RF-103 — API gratuita — Siguiente**  
+**RF-103 — API gratuita — MVP**
 Juno puede utilizar una API gratuita para clasificación o tareas sencillas que no involucren información sensible.
 
 **RF-104 — Un modelo por decisión — Siguiente**  

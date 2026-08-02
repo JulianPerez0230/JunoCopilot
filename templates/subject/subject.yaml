@@ -1,0 +1,7 @@
+schema_version: 1
+id: "{{subject_id}}"
+name: "{{subject_name}}"
+created_at: "{{created_at}}"
+status: "active"
+kind: "subject"
+

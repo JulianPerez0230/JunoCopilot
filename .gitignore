@@ -18,6 +18,8 @@ data/
 state/
 cache/
 logs/
+!templates/logs/
+!templates/logs/**
 attachments/
 *.db
 *.db-shm
@@ -54,4 +56,3 @@ desktop.ini
 *.temp
 *.bak
 *.log
-

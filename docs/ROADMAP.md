@@ -5,6 +5,8 @@
 Este roadmap describe la evolución estratégica de JunoCopilot. No es un calendario inmutable: cada fase se revisará utilizando evidencia obtenida durante el uso real.
 
 El plan operativo de la primera alfa se encuentra en [plans/ALPHA_V0.1.md](plans/ALPHA_V0.1.md).
+El plan operativo de la segunda alfa se encuentra en
+[plans/ALPHA_V0.2.md](plans/ALPHA_V0.2.md).
 
 ## Principios de ejecución
 
@@ -40,6 +42,8 @@ El propósito, alcance, límites y recorrido principal del MVP pueden explicarse
 
 **Horizonte:** cuatro semanas
 
+**Estado:** validación integrada
+
 ### Objetivo
 
 Construir una alfa supervisada que permita comenzar la facultad con continuidad de proyectos, captura rápida, organización básica y primeras funciones de Tutor e Investigación.
@@ -56,13 +60,20 @@ Construir una alfa supervisada que permita comenzar la facultad con continuidad 
 - planificación semanal básica;
 - Tutor alfa;
 - Investigación alfa;
+- resiliencia básica ante la ausencia de un proveedor y control de costos;
 - validación con JunoCopilot y turbinas.
 
 ### Criterio de salida
 
 El recorrido completo definido en el plan alfa funciona de forma reproducible, sin mezclar proyectos ni ejecutar acciones peligrosas.
 
+Juno conserva proyectos, memoria y capturas aunque un proveedor deje de estar
+disponible. Las funciones que dependan de un modelo deben degradarse de forma
+explícita, sin perder información ni generar gastos no autorizados.
+
 ## Fase 2 — Alpha v0.2: vida universitaria
+
+**Estado:** funcionalmente validado; cierre documental pendiente.
 
 ### Objetivo
 
@@ -197,3 +208,5 @@ El roadmap se revisará:
 
 Las funciones pospuestas permanecen como posibilidades, no como compromisos. La experiencia real de uso tiene prioridad sobre este documento.
 
+Las limitaciones activas y las decisiones de aplazamiento se mantienen en
+[KNOWN_LIMITATIONS.md](KNOWN_LIMITATIONS.md).
